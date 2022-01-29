@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fight.gd" type="Script" id=2]
+[ext_resource path="res://动作帧/A_Walk1.png" type="Texture" id=4]
+[ext_resource path="res://动作帧/A_Walk2.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.5, 29 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.1166, 124.833 )
+
+[node name="fight" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BGM_OGG" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="run" type="AudioStreamPlayer" parent="."]
+
+[node name="Player2" type="KinematicBody2D" parent="."]
+position = Vector2( 31, 36 )
+
+[node name="Icon" type="Sprite" parent="Player2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
+position = Vector2( 2, -1.56252 )
+scale = Vector2( 0.12232, 0.114766 )
+frames = SubResource( 3 )
+animation = "move"
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 31, 36 )
+
+[node name="Icon" type="Sprite" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 2, -1.56252 )
+scale = Vector2( 0.12232, 0.114766 )
+frames = SubResource( 3 )
+animation = "move"
+
+[node name="Timer" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -10, 296 )
+rotation = 3.14159
+scale = Vector2( 0.55768, -2.36095 )
+shape = SubResource( 2 )
+
+[connection signal="timeout" from="Player/Timer" to="." method="_on_Timer_timeout"]
