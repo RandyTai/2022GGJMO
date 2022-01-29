@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const bulletPath = preload("res://src/Player/bullet.tscn")
 
-signal hit
+#signal hit
 
 # Declare member variables here. Examples:
 # var a = 2

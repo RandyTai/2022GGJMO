@@ -78,8 +78,6 @@ func _process(delta):
 	position.x = clamp(position.x, 52, screen_size.x - 52)
 	position.y = clamp(position.y, 64, screen_size.y - 64)
 
-
-
 func start(pos):
 	position = pos
 	show()
