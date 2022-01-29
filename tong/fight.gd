@@ -1,9 +1,7 @@
 extends Node2D
 
+const bulletPath = preload("res://bullet.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var speed = 400
 var flyx = 0
 var flyy = 0
@@ -132,15 +130,10 @@ func _process(delta):
 			
 	player2.position.x = clamp(player2.position.x,30,990)
 	player2.position.y = clamp(player2.position.y,30,570)
-	
-	
-
-#
-	
-	
-	
+		
 
 	velocity = velocity.normalized()
 	#player1.move_and_collide(velocity)
 	
-	
+func shoot():
+	var bullet = bulletPath.instance()
