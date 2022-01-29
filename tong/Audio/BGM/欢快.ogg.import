@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/欢快.ogg-9008c673086bbdb5a6e58ab46bd1e49d.oggstr"
+
+[deps]
+
+source_file="res://Audio/BGM/欢快.ogg"
+dest_files=[ "res://.import/欢快.ogg-9008c673086bbdb5a6e58ab46bd1e49d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
