@@ -13,6 +13,10 @@ config_version=4
 config/name="develop"
 config/icon="res://src/img/icon.png"
 
+[autoload]
+
+PlayerData="*res://src/autoload/playerData.tscn"
+
 [display]
 
 window/size/width=1280
