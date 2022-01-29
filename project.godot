@@ -15,7 +15,7 @@ config/icon="res://src/img/icon.png"
 
 [autoload]
 
-PlayerData="*res://src/autoload/playerData.tscn"
+playerData="*res://src/autoload/playerData.tscn"
 
 [display]
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-var item = load("res://src/item/item.tscn")
+var keyboard = load("res://src/item/keyboard.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -26,7 +26,7 @@ func _on_Timer_timeout() -> void:
 		var size = OS.get_window_safe_area().size
 		var buildX = randi() % (int(size.x - 100))
 		var buildY = randi() % (int(size.y - 100))
-		var b = item.instance()
+		var b = keyboard.instance()
 		b.position = Vector2(buildX,buildY)
 		add_child(b)
 
