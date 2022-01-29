@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+const bulletPath = preload("res://src/Player/bullet.tscn")
+
+signal hit
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -77,6 +80,11 @@ func _process(delta):
 	position.y += flyy * speed * delta	*2
 	position.x = clamp(position.x, 52, screen_size.x - 52)
 	position.y = clamp(position.y, 64, screen_size.y - 64)
+	
+	
+	if Input.is_action_just_pressed("player1_shoot"):
+		shoot()
+	
 
 
 
@@ -105,3 +113,10 @@ func _on_Body_area_entered(area):
 			$AttackArea/AttackCollision.disabled = true
 		$AnimatedSprite.play("hurt")
 		hurt = true
+		
+func shoot():
+	var bullet = bulletPath.instance()
+	
+	get_parent().add_child(bullet)
+	
+	bullet.position = $Position2D.global_position
