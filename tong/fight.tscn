@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fight.gd" type="Script" id=2]
+[ext_resource path="res://play.gd" type="Script" id=1]
 [ext_resource path="res://动作帧/A_Walk1.png" type="Texture" id=4]
 [ext_resource path="res://动作帧/A_Walk2.png" type="Texture" id=5]
 
@@ -16,7 +16,7 @@ animations = [ {
 } ]
 
 [node name="fight" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="BGM_OGG" type="AudioStreamPlayer" parent="."]
 autoplay = true
