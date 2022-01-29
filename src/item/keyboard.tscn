@@ -84,7 +84,7 @@ collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="Keyboard" type="Sprite" parent="."]
-position = Vector2( 0, -6.75431 )
+position = Vector2( 0, -4.87878 )
 scale = Vector2( 0.189689, 0.185798 )
 texture = ExtResource( 1 )
 
