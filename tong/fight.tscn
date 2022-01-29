@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fight.gd" type="Script" id=2]
 [ext_resource path="res://动作帧/A_Walk1.png" type="Texture" id=4]
@@ -14,9 +14,6 @@ animations = [ {
 "name": "move",
 "speed": 5.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14.1166, 124.833 )
 
 [node name="fight" type="Node2D"]
 script = ExtResource( 2 )
@@ -59,12 +56,6 @@ animation = "move"
 [node name="Timer" type="Timer" parent="Player"]
 one_shot = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -10, 296 )
-rotation = 3.14159
-scale = Vector2( 0.55768, -2.36095 )
-shape = SubResource( 2 )
+[node name="shoot" type="CollisionShape2D" parent="Player"]
 
 [connection signal="timeout" from="Player/Timer" to="." method="_on_Timer_timeout"]
