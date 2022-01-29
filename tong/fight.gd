@@ -134,34 +134,7 @@ func _process(delta):
 	player2.position.y = clamp(player2.position.y,30,570)
 	
 	
-	######################################################
-#	var temp = 0
-	
-#	if tex1 == 30 && tey1 == 562 && temp == 0:
-#		player1.rotation_degrees = 90
-#		temp +=1
-#	if tex1 == 990 && tey1 == 570 && temp == 0:
-#		player1.rotation_degrees = 270
-#		temp +=1
-#	if tey1 == 30 && tex1 == 30 && temp == 1:
-#		player1.rotation_degrees = 90
-#		temp -=1
-#	if tey1 == 570 && tex1 == 990 && temp == 1:
-#		player1.rotation_degrees = 270
-#		temp -=1
-#
-#	if tex1 == 30 && tey1 == 570 && temp == 1:
-#		player1.rotation_degrees = 270
-#		temp +=1
-#	if tex1 == 990 && tey1 == 570 && temp == 1:
-#		player1.rotation_degrees = 270
-#		temp +=1
-#	if tey1 == 30 && tex1 == 30 && temp == 0:
-#		player1.rotation_degrees = 90
-#		temp -=1
-#	if tey1 == 570 && tex1 == 990 && temp == 0:
-#		player1.rotation_degrees = 270
-#		temp -=1
+
 #
 	
 	
@@ -171,7 +144,3 @@ func _process(delta):
 	#player1.move_and_collide(velocity)
 	
 	
-
-
-func _on_Timer_timeout():
-	pass # Replace with function body.
