@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/战斗.ogg-b199c123e351ebc22407fab6ed79acb2.oggstr"
+
+[deps]
+
+source_file="res://src/Audio/BGM/战斗.ogg"
+dest_files=[ "res://.import/战斗.ogg-b199c123e351ebc22407fab6ed79acb2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
