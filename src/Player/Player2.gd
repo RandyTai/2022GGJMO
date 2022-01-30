@@ -90,7 +90,7 @@ func _process(delta):
 				playerData.Player2_Attack()
 			
 	if playerData.Player2item == 3:
-		if playerData.Player2Heart < 3:
+		if playerData.Player2Heart <= 2:
 			playerData.set_Player2Heart(1)
 		playerData.Player2_Attack()
 		$Timer.start()
