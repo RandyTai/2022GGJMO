@@ -6,7 +6,8 @@ export(String,FILE) var next_scene_path: = ""
 
 func _on_ButtonStart_button_up() -> void:
 	playerData.reset()
-	get_tree().change_scene(next_scene_path)
+	var _a = get_tree().change_scene(next_scene_path)
+		
 
 
 func _get_configuration_warning() -> String:
