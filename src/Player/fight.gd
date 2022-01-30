@@ -7,9 +7,6 @@ var Headphone = load("res://src/item/Headphone.tscn")
 var Monitor = load("res://src/item/Monitor.tscn")
 var Mouse = load("res://src/item/Mouse.tscn")
 #var bullet = preload("res://src/Player/bullet.tscn")
-
-var list = [Keyboard,Chair,Cola,Headphone,Monitor,Mouse] 
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
