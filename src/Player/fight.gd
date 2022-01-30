@@ -6,13 +6,12 @@ var Cola = load("res://src/item/Cola.tscn")
 var Headphone = load("res://src/item/Headphone.tscn")
 var Monitor = load("res://src/item/Monitor.tscn")
 var Mouse = load("res://src/item/Mouse.tscn")
+#var bullet = preload("res://src/Player/bullet.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var list = [Keyboard,Chair,Cola,Headphone,Monitor,Mouse] 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	randomize()
 	$Timer.start()
@@ -22,9 +21,8 @@ func _ready():
 	$Player2.start(Vector2(size_x / 4 * 3, size_y))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	$Player1.look_at($Player2.position)
 
 
 func _on_Timer_timeout() -> void:
