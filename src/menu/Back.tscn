@@ -4,7 +4,7 @@
 
 [node name="Back" type="Button"]
 margin_right = 270.0
-margin_bottom = 40.0
+margin_bottom = 80.0
 text = "Back"
 script = ExtResource( 1 )
 __meta__ = {
