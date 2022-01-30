@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TraditionalChineseHK/SourceHanSansHC-Medium.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/Audio/BGM/欢快.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/menu/ButtonStart.gd" type="Script" id=4]
+[ext_resource path="res://src/img/cover.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -60,6 +61,15 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.664621, 0.661117 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="button_up" from="ButtonStart" to="ButtonStart" method="_on_ButtonStart_button_up"]
 [connection signal="mouse_entered" from="ButtonStart" to="." method="_on_ButtonStart_mouse_entered"]
