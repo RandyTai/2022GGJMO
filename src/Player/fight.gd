@@ -17,7 +17,6 @@ var size_x = OS.get_window_safe_area().size.x
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	list.shuffle()
-	print(list)
 	randomize()
 	$Timer.start()
 	$Node/Player1.start(Vector2(size_x / 4, size_y))
