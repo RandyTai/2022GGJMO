@@ -20,8 +20,8 @@ func _ready():
 	print(list)
 	randomize()
 	$Timer.start()
-	$Player1.start(Vector2(size_x / 4, size_y))
-	$Player2.start(Vector2(size_x / 4 * 3, size_y))
+	$Node/Player1.start(Vector2(size_x / 4, size_y))
+	$Node/Player2.start(Vector2(size_x / 4 * 3, size_y))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

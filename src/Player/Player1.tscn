@@ -31,6 +31,11 @@ animations = [ {
 "name": "stay",
 "speed": 5.0
 }, {
+"frames": [  ],
+"loop": true,
+"name": "attack 1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ) ],
 "loop": true,
 "name": "hurt",
@@ -77,7 +82,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
-animation = "stay"
+animation = "attack 1"
 
 [node name="AttackArea" type="Area2D" parent="." groups=["P1_keyboard"]]
 
