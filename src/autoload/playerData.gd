@@ -1,6 +1,5 @@
 extends Node
 
-
 signal updated
 signal died
 
@@ -20,7 +19,7 @@ func reset():
 	self.deaths = 0
 	self.Player1_skill.clear()
 	self.Player2_skill.clear()
-	for x in range(0,3):
+	for _x in range(0,3):
 		Player1_skill.append(false)
 		Player2_skill.append(false)
 

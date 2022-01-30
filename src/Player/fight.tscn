@@ -24,6 +24,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="UserInterFace" type="CanvasLayer" parent="."]
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]

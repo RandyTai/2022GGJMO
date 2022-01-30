@@ -5,11 +5,12 @@ onready var anime_player: AnimationPlayer = get_node("AnimationPlayer")
 export var item: = 3
 
 func _on_Cola_body_entered(body: PhysicsBody2D) -> void:
-	queue_free()
 	if body.name == "Player1":
+		queue_free()
 		Player1picked()
 	else:
 		Player2picked()
+		queue_free()
 
 func Player1picked() -> void:
 	playerData.Player1item = item

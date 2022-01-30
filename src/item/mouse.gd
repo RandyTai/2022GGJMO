@@ -6,10 +6,11 @@ export var item: = 6
 
 
 func _on_mouse_body_entered(body: PhysicsBody2D) -> void:
-	queue_free()
 	if body.name == "Player1":
+		queue_free()
 		Player1picked()
 	else:
+		queue_free()
 		Player2picked()
 
 func Player1picked() -> void:
