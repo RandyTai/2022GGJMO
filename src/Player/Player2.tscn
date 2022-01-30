@@ -22,9 +22,19 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "supertime",
+"name": "attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "stay",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ) ],
@@ -32,20 +42,10 @@ animations = [ {
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "attack",
+"name": "supertime",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "stay",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
