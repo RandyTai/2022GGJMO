@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/img/2P/B_Attack with keyboard2.png" type="Texture" id=1]
 [ext_resource path="res://src/img/2P/B_Stay.png" type="Texture" id=2]
@@ -24,24 +24,24 @@ animations = [ {
 "name": "attack",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "stay",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "supertime",
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ) ],
 "loop": true,
 "name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "supertime",
 "speed": 5.0
 } ]
 
@@ -56,16 +56,19 @@ extents = Vector2( 48, 56 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "empty",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "full",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "empty",
+"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 47.5, 56.5 )
 
 [node name="Player2" type="KinematicBody2D"]
 position = Vector2( 0, 8 )
@@ -127,6 +130,13 @@ position = Vector2( 188, -288 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
 animation = "full"
+
+[node name="supertime" type="Area2D" parent="." groups=["P2_supertime"]]
+
+[node name="SuperCollision" type="CollisionShape2D" parent="supertime"]
+position = Vector2( -19.5, 0.5 )
+shape = SubResource( 8 )
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]
