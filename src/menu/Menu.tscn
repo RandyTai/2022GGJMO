@@ -58,5 +58,4 @@ autoplay = true
 
 [connection signal="button_up" from="ButtonStart" to="ButtonStart" method="_on_ButtonStart_button_up"]
 [connection signal="mouse_entered" from="ButtonStart" to="." method="_on_ButtonStart_mouse_entered"]
-[connection signal="mouse_exited" from="ButtonStart" to="." method="_on_ButtonStart_mouse_exited"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
