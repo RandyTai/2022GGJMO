@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Audio/BGM/欢快.ogg" type="AudioStream" id=1]
 [ext_resource path="res://src/menu/ButtonStart.gd" type="Script" id=2]
 [ext_resource path="res://fonts/TraditionalChineseHK/SourceHanSansHC-Medium.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/img/cover.png" type="Texture" id=4]
+[ext_resource path="res://src/menu/ButtonQuit.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -49,8 +50,10 @@ rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
 text = "退出"
 flat = true
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="button_up" from="ButtonStart" to="ButtonStart" method="_on_ButtonStart_button_up"]
+[connection signal="button_up" from="ButtonQuit" to="ButtonQuit" method="_on_ButtonQuit_button_up"]
