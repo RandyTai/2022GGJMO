@@ -1,16 +1,30 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Audio/BGM/欢快.ogg" type="AudioStream" id=1]
 [ext_resource path="res://src/menu/ButtonStart.gd" type="Script" id=2]
 [ext_resource path="res://fonts/TraditionalChineseHK/SourceHanSansHC-Medium.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/img/cover.png" type="Texture" id=4]
 [ext_resource path="res://src/menu/ButtonQuit.gd" type="Script" id=5]
+[ext_resource path="res://src/menu/EndUI.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 5
+outline_color = Color( 0.858824, 0.384314, 0.541176, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 5
+outline_color = Color( 0.309804, 0.419608, 0.694118, 1 )
+font_data = ExtResource( 3 )
+
 [node name="EndUI" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
@@ -27,10 +41,10 @@ __meta__ = {
 }
 
 [node name="ButtonStart" type="Button" parent="."]
-margin_left = 507.0
-margin_top = 359.0
-margin_right = 727.0
-margin_bottom = 478.0
+margin_left = 515.0
+margin_top = 442.0
+margin_right = 735.0
+margin_bottom = 561.0
 rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
 text = "重新開始"
@@ -42,15 +56,43 @@ __meta__ = {
 next_scene_path = "res://src/Player/fight.tscn"
 
 [node name="ButtonQuit" type="Button" parent="."]
-margin_left = 505.0
-margin_top = 460.0
-margin_right = 725.0
-margin_bottom = 579.0
+margin_left = 513.0
+margin_top = 543.0
+margin_right = 733.0
+margin_bottom = 662.0
 rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
 text = "退出"
 flat = true
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P1" type="TextEdit" parent="."]
+visible = false
+light_mask = 0
+margin_left = 364.0
+margin_top = 375.0
+margin_right = 557.0
+margin_bottom = 467.0
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/breakpoint_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "P1 WIN!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="P2" type="TextEdit" parent="."]
+visible = false
+margin_left = 698.0
+margin_top = 372.0
+margin_right = 885.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 3 )
+text = "P2 WIN!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
