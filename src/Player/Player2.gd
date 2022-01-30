@@ -91,7 +91,8 @@ func _process(delta):
 				playerData.Player2_Attack()
 			
 	if playerData.Player2item == 3:
-		playerData.set_Player2Heart(1)
+		if playerData.Player2Heart < 3:
+			playerData.set_Player2Heart(1)
 		playerData.Player2_Attack()
 	elif playerData.Player2item == 4:
 		if speed < 1000:
