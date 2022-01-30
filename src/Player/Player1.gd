@@ -67,9 +67,11 @@ func _process(delta):
 			$AnimatedSprite.play('stay')
 
 		if Input.is_action_just_pressed("player1_attack"):
-			$AnimatedSprite.play("attack")
-			$AttackArea/AttackCollision.disabled = false
-			isAttacking = true
+			if playerData.Player1item == 1:
+				$AnimatedSprite.play("attack")
+				$AttackArea/AttackCollision.disabled = false
+				isAttacking = true
+				playerData.Player1_Attack()
 			
 
 	position += velocity * speed *delta
