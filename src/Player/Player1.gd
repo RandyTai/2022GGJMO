@@ -57,9 +57,12 @@ func _process(delta):
 			$AnimatedSprite.play('walk')
 			if velocity.x < 0 && $AnimatedSprite.flip_h == false:
 				$AttackArea/AttackCollision.position.x -= 90
-				$Body/BodyCollision.position.x -= 90
+				$Body/BodyCollision.position.x += 40
+				$CollisionShape2D.position.x += 40
 			elif velocity.x > 0 && $AnimatedSprite.flip_h == true:
 				$AttackArea/AttackCollision.position.x += 90
+				$Body/BodyCollision.position.x -= 40
+				$CollisionShape2D.position.x -= 40
 			$AnimatedSprite.flip_h = velocity.x < 0
 		elif velocity.y != 0 and isAttacking == false:
 			$AnimatedSprite.play('walk')
@@ -67,16 +70,16 @@ func _process(delta):
 			$AnimatedSprite.play('stay')
 
 		if Input.is_action_just_pressed("player1_attack"):
-#			if playerData.Player1item == 1:
+			if playerData.Player1item == 1:
 				$AnimatedSprite.play("attack")
 				$AttackArea/AttackCollision.disabled = false
 				isAttacking = true
 				playerData.Player1_Attack()
-#			else:
-			#if playerData.Player1item == 6:
-#				$mouse.position = position
-#				print(position)
-#				$mouse.position.x += 10
+			if playerData.Player1item == 6:
+				$AnimatedSprite.play("suppertime")
+				$AttackArea/AttackCollision.disabled = false
+				isAttacking = true
+				playerData.Player1_Attack()
 			
 	if playerData.Player1item == 3:
 		playerData.set_Player1Heart(1)
