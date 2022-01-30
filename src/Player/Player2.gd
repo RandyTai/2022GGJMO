@@ -56,6 +56,7 @@ func _process(delta):
 
 		if velocity.x != 0 and isAttacking == false:
 			if isSupperTime == false:
+				print('hi')
 				$AnimatedSprite.play('walk')
 			
 			if velocity.x < 0 && $AnimatedSprite.flip_h == true:
@@ -83,8 +84,8 @@ func _process(delta):
 				isAttacking = true
 				playerData.Player2_Attack()
 			else:
-#			if playerData.Player1item == 6:
-				$AnimatedSprite.play("suppertime")
+			if playerData.Player1item == 6:
+				$AnimatedSprite.play("supertime")
 				$supertime/SuperCollision.disabled = false
 				isSupperTime = true
 				playerData.Player2_Attack()
@@ -130,7 +131,7 @@ func _on_AnimatedSprite_animation_finished():
 		isAttacking = false
 		isSupperTime = false
 		hurt = false
-	elif $AnimatedSprite.animation == 'suppertime':
+	elif $AnimatedSprite.animation == 'supertime':
 		$supertime/SuperCollision.disabled = true
 		isAttacking = false
 		isSupperTime = false
