@@ -61,11 +61,15 @@ func _process(delta):
 
 		if velocity.x != 0 and isAttacking == false:
 			$AnimatedSprite.play('walk')
-			if velocity.x < 0 && $AnimatedSprite.flip_h == false:
-				$AttackArea/AttackCollision.position.x -= 110
-			elif velocity.x > 0 && $AnimatedSprite.flip_h == true:
-				$AttackArea/AttackCollision.position.x += 110
-			$AnimatedSprite.flip_h = velocity.x < 0
+			if velocity.x < 0 && $AnimatedSprite.flip_h == true:
+				$AttackArea/AttackCollision.position.x -= 100
+				$Body/BodyCollision.position.x += 40
+				$CollisionShape2D.position.x += 40
+			elif velocity.x > 0 && $AnimatedSprite.flip_h == false:
+				$AttackArea/AttackCollision.position.x += 100
+				$Body/BodyCollision.position.x -= 40
+				$CollisionShape2D.position.x -= 40
+			$AnimatedSprite.flip_h = velocity.x > 0
 		elif velocity.y != 0 and isAttacking == false:
 			$AnimatedSprite.play('walk')
 		elif isAttacking == false:
