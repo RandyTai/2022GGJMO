@@ -16,19 +16,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ) ],
 "loop": true,
-"name": "attack",
-"speed": 10.0
+"name": "hurt",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "attack 1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -36,10 +31,15 @@ animations = [ {
 "name": "stay",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ) ],
+"frames": [  ],
 "loop": true,
-"name": "hurt",
+"name": "attack 1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
