@@ -67,11 +67,26 @@ func _process(delta):
 			$AnimatedSprite.play('stay')
 
 		if Input.is_action_just_pressed("player1_attack"):
-			$AnimatedSprite.play("attack")
-			$AttackArea/AttackCollision.disabled = false
-			isAttacking = true
+			if playerData.Player1item == 1:
+				$AnimatedSprite.play("attack")
+				$AttackArea/AttackCollision.disabled = false
+				isAttacking = true
+				playerData.Player1_Attack()
 			
-
+	if playerData.Player1item == 3:
+		playerData.set_Player1Heart(1)
+		playerData.Player1_Attack()
+	var hp = playerData.Player1Heart
+	if hp == 0:
+		$HP/HP1.play('empty')
+	elif hp == 1:
+		$HP/HP1.play('full')
+		$HP/HP2.play('empty')
+	elif hp == 2:
+		$HP/HP2.play('full')
+		$HP/HP3.play('empty')
+	elif hp == 3:
+		$HP/HP3.play('full')
 	position += velocity * speed *delta
 	position.x += flyx * speed * delta *2
 	position.y += flyy * speed * delta	*2
@@ -93,13 +108,14 @@ func _on_AnimatedSprite_animation_finished():
 		$AttackArea/AttackCollision.disabled = true
 		isAttacking = false
 		hurt = false
-		
 
 
 
-func _on_Body_area_entered(area):
+func _on_Body_area_entered(area):	
 	if area.is_in_group('P2_keyboard'):
 		if $AttackArea/AttackCollision.disabled == false:
 			$AttackArea/AttackCollision.disabled = true
 		$AnimatedSprite.play("hurt")
-		hurt = true
+		if hurt == false:
+			playerData.set_Player1Heart(-1)
+			hurt = true

@@ -6,11 +6,12 @@ export var item: = 2
 
 
 func _on_Headphone_body_entered(body: PhysicsBody2D) -> void:
-	queue_free()
 	if body.name == "Player1":
 		Player1picked()
+		queue_free()
 	else:
 		Player2picked()
+		queue_free()
 
 func Player1picked() -> void:
 	playerData.Player1item = item
