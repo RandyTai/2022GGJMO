@@ -10,7 +10,7 @@ var Mouse = load("res://src/item/mouse.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var list = [Keyboard,Chair,Cola,Headphone,Mouse,Keyboard,Keyboard,Keyboard,Keyboard,Mouse,Mouse,Mouse,Chair,Chair,Headphone] 
+var list = [Keyboard,Chair,Cola,Headphone,Keyboard,Keyboard,Keyboard,Keyboard,Chair,Chair,Headphone] 
 var size_y = OS.get_window_safe_area().size.y
 var size_x = OS.get_window_safe_area().size.x
 	

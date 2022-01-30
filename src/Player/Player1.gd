@@ -78,11 +78,12 @@ func _process(delta):
 
 		if Input.is_action_just_pressed("player1_attack"):
 			if playerData.Player1item == 1:
+				$atc.play()
 				$AnimatedSprite.play("attack")
 				$AttackArea/AttackCollision.disabled = false
 				isAttacking = true
 				playerData.Player1_Attack()
-			if playerData.Player1item == 6:
+			if playerData.Player1item == 2:
 				$AnimatedSprite.play("suppertime")
 				$supertime/SuperCollision.disabled = false
 				isSupperTime = true
@@ -134,7 +135,8 @@ func _on_AnimatedSprite_animation_finished():
 		isAttacking = false
 		isSupperTime = false
 		hurt = false
-
+	$atc.stop()	
+	$hurt.stop()
 
 
 func _on_Body_area_entered(area):	
@@ -142,6 +144,7 @@ func _on_Body_area_entered(area):
 		if $AttackArea/AttackCollision.disabled == false:
 			$AttackArea/AttackCollision.disabled = true
 		$AnimatedSprite.play("hurt")
+		$hurt.play()
 		if hurt == false:
 			playerData.set_Player1Heart(-1)
 			hurt = true

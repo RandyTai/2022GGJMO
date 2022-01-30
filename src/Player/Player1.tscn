@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/img/1P/A_Attack with keyboard5.png" type="Texture" id=1]
 [ext_resource path="res://src/img/1P/A_Attack with keyboard3.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://src/img/1P/A_Walk1.png" type="Texture" id=14]
 [ext_resource path="res://src/img/1P/A_Attack with keyboard2.png" type="Texture" id=15]
 [ext_resource path="res://src/img/1P/A_Attack with keyboard1.png" type="Texture" id=16]
+[ext_resource path="res://src/Audio/音效/attack.ogg" type="AudioStream" id=17]
+[ext_resource path="res://src/Audio/音效/hurt.ogg" type="AudioStream" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -42,7 +44,7 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 8 ), null, ExtResource( 8 ), ExtResource( 8 ), null, ExtResource( 8 ), ExtResource( 8 ), null, ExtResource( 8 ) ],
 "loop": true,
 "name": "hurt",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -133,6 +135,12 @@ animation = "full"
 position = Vector2( -18.5, 0.5 )
 shape = SubResource( 7 )
 disabled = true
+
+[node name="atc" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]
