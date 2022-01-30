@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/img/2P/B_Attack with keyboard2.png" type="Texture" id=1]
 [ext_resource path="res://src/img/2P/B_Stay.png" type="Texture" id=2]
@@ -18,9 +18,20 @@
 [ext_resource path="res://src/img/2P/B_Hurt.png" type="Texture" id=16]
 [ext_resource path="res://src/Audio/音效/attack.ogg" type="AudioStream" id=17]
 [ext_resource path="res://src/Audio/音效/hurt.ogg" type="AudioStream" id=18]
+[ext_resource path="res://src/Audio/音效/drink.ogg" type="AudioStream" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "supertime",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "attack",
@@ -35,16 +46,6 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ), ExtResource( 16 ), null, ExtResource( 16 ) ],
-"loop": true,
-"name": "hurt",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 5 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "supertime",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -58,14 +59,14 @@ extents = Vector2( 48, 56 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "full",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "full",
 "speed": 5.0
 } ]
 
@@ -146,5 +147,11 @@ stream = ExtResource( 17 )
 [node name="hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
 
+[node name="drink" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

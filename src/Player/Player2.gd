@@ -56,7 +56,6 @@ func _process(delta):
 
 		if velocity.x != 0 and isAttacking == false:
 			if isSupperTime == false:
-				print('hi')
 				$AnimatedSprite.play('walk')
 			
 			if velocity.x < 0 && $AnimatedSprite.flip_h == true:
@@ -94,6 +93,8 @@ func _process(delta):
 		if playerData.Player2Heart < 3:
 			playerData.set_Player2Heart(1)
 		playerData.Player2_Attack()
+		$Timer.start()
+		$drink.play()
 	elif playerData.Player2item == 4:
 		if speed < 1000:
 			speed += 100
@@ -151,3 +152,7 @@ func _on_Body_area_entered(area):
 		if hurt == false:
 			playerData.set_Player2Heart(-1)
 			hurt = true
+
+
+func _on_Timer_timeout() -> void:
+	$drink.stop()
