@@ -5,8 +5,8 @@ extends KinematicBody2D
 #var speed = 300
 #
 func _ready():
-	var a = get_parent()
+	var _a = get_parent()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	position.x += 10
 	

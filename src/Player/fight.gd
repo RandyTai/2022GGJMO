@@ -5,7 +5,7 @@ var Chair = load("res://src/item/Chair.tscn")
 var Cola = load("res://src/item/Cola.tscn")
 var Headphone = load("res://src/item/Headphone.tscn")
 var Monitor = load("res://src/item/Monitor.tscn")
-var Mouse = load("res://src/item/Mouse.tscn")
+var Mouse = load("res://src/item/mouse.tscn")
 #var bullet = preload("res://src/Player/bullet.tscn")
 # Declare member variables here. Examples:
 # var a = 2
