@@ -21,12 +21,10 @@ func _on_Player_died() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		self.paused = not self.paused
-		print("died")
 
 
 func set_paused(value: bool) -> void:
 	paused = value
 	scene_tree.paused = value
 	pause_overlay.visible = value
-	print(value)
 
