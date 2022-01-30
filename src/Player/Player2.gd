@@ -83,7 +83,6 @@ func _process(delta):
 				$AttackArea/AttackCollision.disabled = false
 				isAttacking = true
 				playerData.Player2_Attack()
-			else:
 			if playerData.Player1item == 6:
 				$AnimatedSprite.play("supertime")
 				$supertime/SuperCollision.disabled = false
