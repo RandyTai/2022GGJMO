@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+onready var ats = $attack_sound
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -68,6 +68,7 @@ func _process(delta):
 
 		if Input.is_action_just_pressed("player1_attack"):
 			if playerData.Player1item == 1:
+				#atc.play()
 				$AnimatedSprite.play("attack")
 				$AttackArea/AttackCollision.disabled = false
 				isAttacking = true
