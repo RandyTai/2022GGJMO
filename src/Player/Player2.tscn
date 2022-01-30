@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/img/A_Attack with keyboard2.png" type="Texture" id=1]
 [ext_resource path="res://src/img/A_Attack with keyboard1.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://src/img/A_Attack with keyboard4.png" type="Texture" id=8]
 [ext_resource path="res://src/img/A_Attack with keyboard5.png" type="Texture" id=9]
 [ext_resource path="res://src/img/A_Attack with keyboard3.png" type="Texture" id=10]
+[ext_resource path="res://src/img/2P Icon.png" type="Texture" id=11]
+[ext_resource path="res://src/img/Heart Icon.png" type="Texture" id=12]
+[ext_resource path="res://src/img/Heart Icon 2.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,6 +46,19 @@ extents = Vector2( 25, 60 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 48, 56 )
 
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "full",
+"speed": 5.0
+} ]
+
 [node name="Player2" type="KinematicBody2D"]
 position = Vector2( 0, 8 )
 script = ExtResource( 6 )
@@ -68,6 +84,38 @@ disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -60.0
+margin_top = -93.0
+margin_right = 197.0
+margin_bottom = 164.0
+rect_scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Area2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+
+[node name="HP1" type="AnimatedSprite" parent="HP"]
+position = Vector2( -20, -288 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 7 )
+animation = "full"
+
+[node name="HP2" type="AnimatedSprite" parent="HP"]
+position = Vector2( 84, -288 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 7 )
+animation = "full"
+
+[node name="HP3" type="AnimatedSprite" parent="HP"]
+position = Vector2( 188, -288 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 7 )
+animation = "full"
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]

@@ -95,7 +95,6 @@ func _on_AnimatedSprite_animation_finished():
 		$AttackArea/AttackCollision.disabled = true
 		isAttacking = false
 		hurt = false
-		
 
 
 
@@ -104,4 +103,18 @@ func _on_Body_area_entered(area):
 		if $AttackArea/AttackCollision.disabled == false:
 			$AttackArea/AttackCollision.disabled = true
 		$AnimatedSprite.play("hurt")
-		hurt = true
+		if hurt == false:
+			playerData.set_Player1Heart(-1)
+			var hp = playerData.Player1Heart
+			if hp == 0:
+				$HP/HP1.play('empty')
+			elif hp == 1:
+				$HP/HP1.play('full')
+				$HP/HP2.play('empty')
+			elif hp == 2:
+				$HP/HP2.play('full')
+				$HP/HP3.play('empty')
+			elif hp == 3:
+				$HP/HP3.play('full')
+			hurt = true
+		
