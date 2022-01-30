@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 
 onready var scene_tree: SceneTree = get_tree()
@@ -16,11 +16,10 @@ func _ready() -> void:
 
 func _on_Player_died() -> void:
 	self.paused = true
-	title_label.text = MESSAGE_DIED
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause") and title_label.text != MESSAGE_DIED:
+	if event.is_action_pressed("pause"):
 		self.paused = not self.paused
 
 
