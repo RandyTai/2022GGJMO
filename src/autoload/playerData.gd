@@ -9,8 +9,8 @@ var Player2item: = 0 setget set_Player2item
 var Player1Heart: = 3 setget set_Player1Heart
 var Player2Heart: = 3 setget set_Player1Heart
 var deaths: = 0 setget set_deaths
-var Player1_skill = [false,false,false,false] setget set_Player1_skill
-var Player2_skill = [false,false,false,false] setget set_Player2_skill
+var Player1_skill = [0,0,0,0] setget set_Player1_skill
+var Player2_skill = [0,0,0,0] setget set_Player2_skill
 
 func reset():
 	self.Player1Heart = 3
@@ -18,8 +18,11 @@ func reset():
 	self.Player1item = 0
 	self.Player2item = 0
 	self.deaths = 0
-	self.Player1_skill = [false,false,false,false]
-	self.Player2_skill = [false,false,false,false]
+	self.Player1_skill.clear()
+	self.Player2_skill.clear()
+	for x in range(0,3):
+		Player1_skill.append(false)
+		Player2_skill.append(false)
 
 func Player1_Attack() -> void:
 	Player1item = 0
@@ -28,10 +31,10 @@ func Player2_Attack() -> void:
 	Player2item = 0
 	
 func Player1_UseSkill() -> void:
-	Player1_skill = [false,false,false,false]
+	Player1_skill = [0,0,0,0]
 
 func Player2_UseSkill() -> void:
-	Player2_skill = [false,false,false,false]
+	Player2_skill = [0,0,0,0]
 
 func set_Player1Heart(new_Player1Heart: int) -> void:
 	Player1Heart = new_Player1Heart
