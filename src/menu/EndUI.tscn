@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Audio/BGM/欢快.ogg" type="AudioStream" id=1]
+[ext_resource path="res://src/menu/ButtonStart.gd" type="Script" id=2]
+[ext_resource path="res://fonts/TraditionalChineseHK/SourceHanSansHC-Medium.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://src/img/cover.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="EndUI" type="Node2D"]
+
+[node name="ButtonStart" type="Button" parent="."]
+margin_left = 507.0
+margin_top = 359.0
+margin_right = 727.0
+margin_bottom = 478.0
+rect_pivot_offset = Vector2( 142, 95 )
+custom_fonts/font = SubResource( 1 )
+text = "重新開始"
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://src/Player/fight.tscn"
+
+[node name="ButtonQuit" type="Button" parent="."]
+margin_left = 505.0
+margin_top = 460.0
+margin_right = 725.0
+margin_bottom = 579.0
+rect_pivot_offset = Vector2( 142, 95 )
+custom_fonts/font = SubResource( 1 )
+text = "退出"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.664621, 0.661117 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="ButtonStart" to="ButtonStart" method="_on_ButtonStart_button_up"]

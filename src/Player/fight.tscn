@@ -12,12 +12,6 @@
 [node name="fight" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Node" type="Node" parent="."]
-
-[node name="Player1" parent="Node" instance=ExtResource( 2 )]
-
-[node name="Player2" parent="Node" instance=ExtResource( 4 )]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -3
 
@@ -34,8 +28,16 @@ __meta__ = {
 }
 
 [node name="UserInterFace" type="CanvasLayer" parent="."]
+layer = 128
 
 [node name="Control" parent="UserInterFace" instance=ExtResource( 6 )]
+next_scene_path = "res://src/menu/EndUI.tscn"
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Player1" parent="Node" instance=ExtResource( 2 )]
+
+[node name="Player2" parent="Node" instance=ExtResource( 4 )]
 
 [node name="Timer" type="Timer" parent="."]
 

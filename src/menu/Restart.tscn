@@ -4,7 +4,7 @@
 
 [node name="Restart" type="Button"]
 margin_right = 230.0
-margin_bottom = 40.0
+margin_bottom = 80.0
 text = "Restart"
 script = ExtResource( 1 )
 __meta__ = {
