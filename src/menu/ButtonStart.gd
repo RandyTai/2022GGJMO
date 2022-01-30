@@ -12,3 +12,7 @@ func _on_ButtonStart_button_up() -> void:
 
 func _get_configuration_warning() -> String:
 	return "The property Next Level can't be empty" if next_scene_path == "" else ""
+
+
+func _on_ButtonQuit_button_up() -> void:
+	pass # Replace with function body.
