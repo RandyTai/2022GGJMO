@@ -5,7 +5,10 @@ var Chair = load("res://src/item/Chair.tscn")
 var Cola = load("res://src/item/Cola.tscn")
 var Headphone = load("res://src/item/Headphone.tscn")
 var Monitor = load("res://src/item/Monitor.tscn")
-var Mouse = load("res://src/item/mouse.tscn")
+var Mouse = load("res://src/item/Mouse.tscn")
+#var bullet = preload("res://src/Player/bullet.tscn")
+
+var list = [Keyboard,Chair,Cola,Headphone,Monitor,Mouse] 
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -23,9 +26,10 @@ func _ready():
 	$Node/Player1.start(Vector2(size_x / 4, size_y))
 	$Node/Player2.start(Vector2(size_x / 4 * 3, size_y))
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	$Player1.look_at($Player2.position)
 
 func _on_Timer_timeout() -> void:
 	var number = list[randi()%list.size()]

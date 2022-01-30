@@ -1,13 +1,12 @@
 extends KinematicBody2D
 
 
-var velocity = Vector2(1,0)
-var speed = 300
-
+#var velocity = Vector2(1,0)
+#var speed = 300
+#
 func _ready():
-	pass # Replace with function body.
+	var a = get_parent()
 
-#func _physics_process(delta):
-#	pass
-	#var tex = $Player1.position.x
-#	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
+func _physics_process(delta):
+	position.x += 10
+	
