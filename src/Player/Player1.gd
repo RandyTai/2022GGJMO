@@ -7,6 +7,7 @@ export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var face
 var isAttacking = false
+var isSupperTime = false
 var flyx = 0
 var flyy = 0
 var hurt = false
@@ -54,20 +55,26 @@ func _process(delta):
 				flyy = -1
 
 		if velocity.x != 0 and isAttacking == false:
-			$AnimatedSprite.play('walk')
+			if isSupperTime == false:
+				$AnimatedSprite.play('walk')
+			
 			if velocity.x < 0 && $AnimatedSprite.flip_h == false:
 				$AttackArea/AttackCollision.position.x -= 90
+				$supertime/SuperCollision.position.x += 40
 				$Body/BodyCollision.position.x += 40
 				$CollisionShape2D.position.x += 40
 			elif velocity.x > 0 && $AnimatedSprite.flip_h == true:
 				$AttackArea/AttackCollision.position.x += 90
+				$supertime/SuperCollision.position.x -= 40
 				$Body/BodyCollision.position.x -= 40
 				$CollisionShape2D.position.x -= 40
 			$AnimatedSprite.flip_h = velocity.x < 0
 		elif velocity.y != 0 and isAttacking == false:
-			$AnimatedSprite.play('walk')
+			if isSupperTime == false:
+				$AnimatedSprite.play('walk')
 		elif isAttacking == false:
-			$AnimatedSprite.play('stay')
+			if isSupperTime == false:
+				$AnimatedSprite.play('stay')
 
 		if Input.is_action_just_pressed("player1_attack"):
 			if playerData.Player1item == 1:
@@ -75,10 +82,11 @@ func _process(delta):
 				$AttackArea/AttackCollision.disabled = false
 				isAttacking = true
 				playerData.Player1_Attack()
-			if playerData.Player1item == 6:
+			else:
+#			if playerData.Player1item == 6:
 				$AnimatedSprite.play("suppertime")
-				$AttackArea/AttackCollision.disabled = false
-				isAttacking = true
+				$supertime/SuperCollision.disabled = false
+				isSupperTime = true
 				playerData.Player1_Attack()
 			
 	if playerData.Player1item == 3:
@@ -115,16 +123,23 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'hurt':
 		$AnimatedSprite.play('stay')
 		isAttacking = false
+		isSupperTime = false
 		hurt = false
 	elif $AnimatedSprite.animation == 'attack':
 		$AttackArea/AttackCollision.disabled = true
 		isAttacking = false
+		isSupperTime = false
+		hurt = false
+	elif $AnimatedSprite.animation == 'suppertime':
+		$supertime/SuperCollision.disabled = true
+		isAttacking = false
+		isSupperTime = false
 		hurt = false
 
 
 
 func _on_Body_area_entered(area):	
-	if area.is_in_group('P2_keyboard'):
+	if area.is_in_group('P2_keyboard') || area.is_in_group('P2_supertime'):
 		if $AttackArea/AttackCollision.disabled == false:
 			$AttackArea/AttackCollision.disabled = true
 		$AnimatedSprite.play("hurt")
