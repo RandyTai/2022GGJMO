@@ -35,7 +35,7 @@ func Player2_UseSkill() -> void:
 
 func set_Player1Heart(new_Player1Heart: int) -> void:
 	Player1Heart += new_Player1Heart
-	if Player2Heart == 0:
+	if Player1Heart == 0:
 		set_deaths()
 
 func set_Player2Heart(new_Player2Heart: int) -> void:
