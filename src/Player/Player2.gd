@@ -104,11 +104,9 @@ func _on_AnimatedSprite_animation_finished():
 		$AttackArea/AttackCollision.disabled = true
 		isAttacking = false
 		hurt = false
-		
-
-
 
 func _on_Body_area_entered(area):
+	
 	if area.is_in_group('P1_keyboard'):
 		if $AttackArea/AttackCollision.disabled == false:
 			$AttackArea/AttackCollision.disabled = true

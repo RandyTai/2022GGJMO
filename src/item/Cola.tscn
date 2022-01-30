@@ -72,7 +72,7 @@ position = Vector2( 5.96046e-08, 0 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hp_cola"]]
 position = Vector2( 1.06836, -1.10672 )
 rotation = 0.696386
 shape = SubResource( 1 )
