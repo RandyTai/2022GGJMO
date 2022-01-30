@@ -70,10 +70,11 @@ func _process(delta):
 			$AnimatedSprite.play('stay')
 
 		if Input.is_action_just_pressed("player2_attack"):
-			$AnimatedSprite.play("attack")
-			$AttackArea/AttackCollision.disabled = false
-			isAttacking = true
-			
+			if playerData.Player2item == 1:
+				$AnimatedSprite.play("attack")
+				$AttackArea/AttackCollision.disabled = false
+				isAttacking = true
+				playerData.Player2_Attack()
 
 	position += velocity * speed *delta
 	position.x += flyx * speed * delta *2
@@ -112,7 +113,20 @@ func _on_Body_area_entered(area):
 		if $AttackArea/AttackCollision.disabled == false:
 			$AttackArea/AttackCollision.disabled = true
 		$AnimatedSprite.play("hurt")
-		hurt = true
+		if hurt == false:
+			playerData.set_Player2Heart(-1)
+			var hp = playerData.Player2Heart
+			if hp == 0:
+				$HP/HP1.play('empty')
+			elif hp == 1:
+				$HP/HP1.play('full')
+				$HP/HP2.play('empty')
+			elif hp == 2:
+				$HP/HP2.play('full')
+				$HP/HP3.play('empty')
+			elif hp == 3:
+				$HP/HP3.play('full')
+			hurt = true
 		
 func shoot():
 	var bullet = bulletPath.instance()
