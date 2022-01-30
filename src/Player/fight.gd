@@ -30,7 +30,7 @@ func _ready():
 
 func _on_Timer_timeout() -> void:
 	var number = list[randi()%list.size()]
-	if(get_child_count()<10):
+	if(get_child_count()<15):
 		var buildX = randi() % (int(size_x - 150)) + 150
 		var buildY = randi() % (int(size_y - 100)) + 100
 		var b = number.instance()
