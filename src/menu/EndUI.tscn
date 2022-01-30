@@ -11,6 +11,20 @@ font_data = ExtResource( 3 )
 
 [node name="EndUI" type="Node2D"]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.664621, 0.661117 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ButtonStart" type="Button" parent="."]
 margin_left = 507.0
 margin_top = 359.0
@@ -35,20 +49,6 @@ rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
 text = "退出"
 flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-autoplay = true
-
-[node name="TextureRect" type="TextureRect" parent="."]
-show_behind_parent = true
-margin_right = 1920.0
-margin_bottom = 1080.0
-rect_scale = Vector2( 0.664621, 0.661117 )
-texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
