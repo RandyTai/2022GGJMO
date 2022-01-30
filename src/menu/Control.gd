@@ -15,7 +15,6 @@ func _ready() -> void:
 
 func _on_Player_died() -> void:
 	#self.paused = true
-	playerData.reset()
 	var _a = get_tree().change_scene(next_scene_path)
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -30,7 +30,7 @@ margin_right = 727.0
 margin_bottom = 518.0
 rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
-text = "遊戲開始"
+text = "Start"
 flat = true
 script = ExtResource( 4 )
 __meta__ = {
@@ -46,7 +46,7 @@ margin_bottom = 645.0
 rect_scale = Vector2( 0.96513, 0.983863 )
 rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
-text = "遊戲退出"
+text = "Quit"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false

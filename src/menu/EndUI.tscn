@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Audio/BGM/欢快.ogg" type="AudioStream" id=1]
 [ext_resource path="res://src/menu/ButtonStart.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/img/cover.png" type="Texture" id=4]
 [ext_resource path="res://src/menu/ButtonQuit.gd" type="Script" id=5]
 [ext_resource path="res://src/menu/EndUI.gd" type="Script" id=6]
+[ext_resource path="res://fonts/TraditionalChineseHK/SourceHanSansHC-Regular.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -22,6 +23,12 @@ size = 50
 outline_size = 5
 outline_color = Color( 0.309804, 0.419608, 0.694118, 1 )
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+outline_size = 1
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 7 )
 
 [node name="EndUI" type="Node2D"]
 script = ExtResource( 6 )
@@ -47,7 +54,7 @@ margin_right = 735.0
 margin_bottom = 561.0
 rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
-text = "重新開始"
+text = "Restart"
 flat = true
 script = ExtResource( 2 )
 __meta__ = {
@@ -62,7 +69,7 @@ margin_right = 733.0
 margin_bottom = 662.0
 rect_pivot_offset = Vector2( 142, 95 )
 custom_fonts/font = SubResource( 1 )
-text = "退出"
+text = "Quit"
 flat = true
 script = ExtResource( 5 )
 __meta__ = {
@@ -70,12 +77,11 @@ __meta__ = {
 }
 
 [node name="P1" type="TextEdit" parent="."]
-visible = false
 light_mask = 0
 margin_left = 364.0
 margin_top = 375.0
-margin_right = 557.0
-margin_bottom = 467.0
+margin_right = 564.0
+margin_bottom = 470.0
 custom_colors/caret_color = Color( 0, 0, 0, 1 )
 custom_colors/breakpoint_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
@@ -86,15 +92,29 @@ __meta__ = {
 }
 
 [node name="P2" type="TextEdit" parent="."]
-visible = false
-margin_left = 698.0
-margin_top = 372.0
+margin_left = 685.0
+margin_top = 370.0
 margin_right = 885.0
-margin_bottom = 458.0
+margin_bottom = 465.0
 custom_fonts/font = SubResource( 3 )
 text = "P2 WIN!"
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="P3" type="TextEdit" parent="."]
+light_mask = 0
+margin_left = 696.0
+margin_top = 660.0
+margin_right = 1280.0
+margin_bottom = 716.0
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/breakpoint_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Credits: Randy Tai, Jason Lok, IP Tong, Ivan Lam"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [connection signal="button_up" from="ButtonStart" to="ButtonStart" method="_on_ButtonStart_button_up"]
