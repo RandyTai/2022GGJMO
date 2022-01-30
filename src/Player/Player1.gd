@@ -93,6 +93,8 @@ func _process(delta):
 		if playerData.Player1Heart <= 2:
 			playerData.set_Player1Heart(1)
 		playerData.Player1_Attack()
+		$Timer.start()
+		$drink.play()
 	elif playerData.Player1item == 4:
 		if speed < 1000:
 			speed += 100
@@ -149,3 +151,8 @@ func _on_Body_area_entered(area):
 		if hurt == false:
 			playerData.set_Player1Heart(-1)
 			hurt = true
+
+
+
+func _on_Timer_timeout() -> void:
+	$drink.stop()
