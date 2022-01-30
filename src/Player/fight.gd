@@ -31,8 +31,8 @@ func _on_Timer_timeout() -> void:
 	var number = list[randi()%list.size()]
 	if(get_child_count()<10):
 		var size = OS.get_window_safe_area().size
-		var buildX = randi() % (int(size.x - 100)) + 50
-		var buildY = randi() % (int(size.y - 100)) + 50
+		var buildX = randi() % (int(size.x - 50)) + 50
+		var buildY = randi() % (int(size.y - 50)) + 50
 		var b = number.instance()
 		b.position = Vector2(buildX,buildY)
 		add_child(b)

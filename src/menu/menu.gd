@@ -22,7 +22,8 @@ func _on_ButtonQuit_pressed():
 
 
 func _on_ButtonStart_mouse_entered():
-	$ButtonStart.text = TEXT_mouse
+	pass
+	#$ButtonStart.text = TEXT_mouse
 
 
 func _on_ButtonStart_mouse_exited():
